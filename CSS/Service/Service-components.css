@@ -1,0 +1,210 @@
+
+/* --------------------------
+| Thẻ  | Kích thước mặc định |
+| ---- | ------------------- |
+| `h1` | 2rem (≈ 32px)       |
+| `h2` | 1.5rem (≈ 24px)     |
+| `h3` | 1.17rem (≈ 18.72px) |
+| `h4` | 1rem (≈ 16px)       |
+| `h5` | 0.83rem (≈ 13.28px) |
+| `h6` | 0.67rem (≈ 10.72px) | 
+-------------------------- */
+/* @layer
+  base (thấp nhất)
+  components (trung bình)
+  utilities (cao nhất)
+*/
+/*
+  Mobile: 480px
+  Tablet: 768px
+  Laptop: 1024px
+  Desktop: 1440px
+  TV / 4K: 1920px
+*/
+
+@layer components {
+
+/** ----- ----- ----- menu ----- ----- ----- */
+.menu-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  background: var(--color-bg-glass);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+/** ----- ----- container ----- ----- */
+.menu__container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0.8rem 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-gradient {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  user-select: none;
+  font-weight: bold;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: var(--transition-smooth);
+}
+.logo-gradient:hover {
+  opacity: 0.8;
+}
+
+/** ----- desktop-navbar ----- */
+.menu__desktop-navbar {
+  display: flex;
+  gap: 1.5rem;
+}
+.menu__desktop-navbar > a {
+  position: relative;
+  font-weight: bold;
+  user-select: none;
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  color: var(--color-text-sub);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+.menu__desktop-navbar > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--color-primary);
+  transition: var(--transition-smooth);
+}
+.menu__desktop-navbar > a:hover {
+  color: #fff;
+}
+.menu__desktop-navbar > a:hover::after {
+  width: 100%;
+}
+
+/** ----- menu button (mobile) ----- */
+.menu-button {
+  display: none;
+  font-size: 1.4rem;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/** ----- ----- mobile-navbar ----- ----- */
+.menu__mobile-navbar {
+  display: none;
+  position: fixed;
+  top: 3.5rem; left: 1rem; right: 1rem;
+  height: auto;
+  flex-direction: column;
+  gap: 0.5rem;
+  user-select: none;
+  
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-strong);
+
+  animation: slideDown 0.3s ease;
+}
+.menu__mobile-navbar > a {
+  color: var(--color-text-sub);
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+.menu__mobile-navbar > a:hover {
+  background: var(--color-primary-soft);
+  color: #fff;
+}
+
+/** ----- ----- ----- footer ----- ----- ----- */
+.footer-section {
+  padding: 4rem 1.2rem 2rem;
+  background: var(--color-bg-sub);
+  border-top: 1px solid var(--color-border-soft);
+}
+
+/** ----- ----- container ----- ----- */
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/** ----- footer top ----- */
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.footer__tagline {
+  color: var(--color-text-sub);
+  margin: 1rem 0 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+.footer__socials {
+  display: flex;
+  gap: 1.5rem;
+}
+.footer__socials a {
+  color: var(--color-text-sub);
+  font-size: 1.4rem;
+  transition: var(--transition-smooth);
+}
+.footer__socials a:hover {
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+.footer__divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-border), transparent);
+  margin-bottom: 2rem;
+}
+
+/** ----- footer bottom ----- */
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+.footer__copyright span {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.footer__policy {
+  display: flex;
+  gap: 1.5rem;
+}
+.footer__policy a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+.footer__policy a:hover { color: #fff; }
+}

@@ -18,6 +18,33 @@
 </head>
 <body x-data="{ modalOpen: false }" :class="{ 'no-scroll': modalOpen }">
 
+  <!--* ----- ----- ----- menu ----- ----- ----- -->
+  <header id="menu-header" class="menu-header" 
+    x-data="{ open: false }" @scroll.window="open = false">
+    <!--* ----- ----- container ----- ----- -->
+    <div class="menu__container">
+      <a href="#" class="logo-gradient">VNmini</a>
+      <!--* ----- desktop-navbar ----- -->
+      <nav class="menu__desktop-navbar" aria-label="Menu chính">
+        <a href="../HTML/SEO.html">Trang chủ</a>
+        <a href="../HTML/Agency.html">Giới thiệu</a>
+        <a href="../HTML/Service.html">Dịch vụ</a>
+      </nav>
+      <button @click="open = !open" class="menu-button">
+        <i class="fas" :class="open ? 'fa-times' : 'fa-bars'"></i>
+      </button>
+    </div>
+
+    <!--* ----- ----- mobile-navbar ----- ----- -->
+    <nav x-show="open" 
+        @click.away="open = false"
+        class="menu__mobile-navbar" aria-label="Menu phụ">
+        <a href="../HTML/SEO.html">Trang chủ</a>
+        <a href="../HTML/Agency.html">Giới thiệu</a>
+        <a href="../HTML/Service.html">Dịch vụ</a>
+    </nav>
+  </header>
+
   <!--* ----- ----- ----- footer ----- ----- ----- -->
   <footer id="footer-section" class="footer-section">
     <div class="footer__container" data-aos="fade-up">

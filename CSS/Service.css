@@ -1,0 +1,83 @@
+
+/* --------------------------
+| Thẻ  | Kích thước mặc định |
+| ---- | ------------------- |
+| `h1` | 2rem (≈ 32px)       |
+| `h2` | 1.5rem (≈ 24px)     |
+| `h3` | 1.17rem (≈ 18.72px) |
+| `h4` | 1rem (≈ 16px)       |
+| `h5` | 0.83rem (≈ 13.28px) |
+| `h6` | 0.67rem (≈ 10.72px) | 
+-------------------------- */
+/* @layer
+  base (thấp nhất)
+  components (trung bình)
+  utilities (cao nhất)
+*/
+/*
+  Mobile: 480px
+  Tablet: 768px
+  Laptop: 1024px
+  Desktop: 1440px
+  TV / 4K: 1920px
+*/
+
+/** ===== import ===== */
+@import url("./Service/Service-base.css");
+@import url("./Service/Service-components.css");
+@import url("./Service/Service-utilities.css");
+
+/** ===== CSS trước layer hệ thống ===== */
+body {
+  background: linear-gradient(to right, #0f172a, #020617);
+  color: #fff;
+  min-height: 100vh;
+}
+body::selection {
+  background: rgba(23, 50, 89, 0.5);
+  color: #fff;
+}
+
+/** ===== root ===== */
+:root {
+
+  /* ===== Primary (màu chính) ===== */
+  --color-primary: #38bdf8;
+  --color-primary-hover: #0ea5e9;
+  --color-primary-soft: rgba(56, 189, 248, 0.15);
+
+  /* ===== Secondary (gradient / accent) ===== */
+  --color-secondary: #a78bfa;
+  --color-secondary-soft: rgba(167, 139, 250, 0.15);
+
+  /* ===== Background ===== */
+  --color-bg-main: #020617;
+  --color-bg-sub: #0f172a;
+  --color-bg-glass: rgba(15, 23, 42, 0.6);
+
+  /* ===== Text ===== */
+  --color-text-sub: #cbd5f5;
+  --color-text-muted: #64748b;
+
+  /* ===== Border ===== */
+  --color-border-dark: rgba(255, 255, 255, 0.2);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-soft: rgba(255, 255, 255, 0.05);
+
+  /* ===== Shadow ===== */
+  --shadow-soft: 0 4px 20px rgba(0,0,0,0.2);
+  --shadow-strong: 0 10px 40px rgba(0,0,0,0.4);
+
+  /* ===== Radius ===== */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* ===== Transition ===== */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.3s ease;
+
+  /* ===== Gradient ===== */
+  --gradient-primary: linear-gradient(45deg, #38bdf8, #a78bfa);
+
+}

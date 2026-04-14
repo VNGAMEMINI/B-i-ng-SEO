@@ -22,11 +22,18 @@
   TV / 4K: 1920px
 */
 
-@layer base {
-/** ===== divider ===== */
-.hr-divider {
-  border: none;
-  height: 1px;
-  background: linear-gradient(to right, transparent, #38bdf8, transparent);
+@layer utilities {
+@media (max-width: 768px) { /* Tablet: 768px */
+
+  /** ----- ----- ----- menu ----- ----- ----- */
+  .menu__desktop-navbar {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
+  .menu__mobile-navbar {
+    display: flex;
+  }
 }
 }

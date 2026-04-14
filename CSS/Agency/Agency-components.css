@@ -23,7 +23,6 @@
 */
 
 @layer components {
-
 /** ----- ----- ----- menu ----- ----- ----- */
 .menu-header {
   position: sticky;
@@ -620,6 +619,7 @@
   color: var(--color-text-sub);
   display: none;
 }
+
 /** ----- ----- ----- footer ----- ----- ----- */
 .footer-section {
   padding: 4rem 1.2rem 2rem;
